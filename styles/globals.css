@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply antialiased bg-gray-100 dark:bg-neutral-800 text-black dark:text-white;
+  }
+}
+
+@layer components {
+  .label {
+    @apply select-none text-gray-500 dark:text-neutral-500 text-sm mb-2 inline-block;
+  }
+
+  .label-flat {
+    @apply select-none text-gray-500 dark:text-neutral-500 text-sm inline-block leading-none;
+  }
+
+  .input {
+    @apply placeholder-gray-400 dark:placeholder-neutral-600 bg-transparent border text-sm border-gray-300 dark:border-neutral-700 rounded-md p-2 shadow-sm hover:border-gray-400 dark:hover:border-neutral-600 focus:outline-none focus:ring-0 focus:border-gray-500 dark:focus:border-neutral-500;
+  }
+
+  .fade-in {
+    animation: fadeIn 0.2s ease;
+  }
+
+  .dropdown-menu-subtrigger[data-state="open"] {
+    @apply bg-gray-50 dark:bg-neutral-800;
+  }
+
+  .dropdown-menu-item[data-highlighted] {
+    @apply bg-gray-100 dark:bg-neutral-800 outline-none;
+  }
+
+  .dropdown-menu-item[data-highlighted] * {
+    @apply opacity-100 outline-none;
+  }
+
+  .icon-button-base {
+    @apply p-1.5 rounded-md focus:outline-none focus:ring-0 enabled:hover:text-inherit enabled:focus-visible:text-inherit;
+  }
+
+  .icon-button {
+    @apply enabled:hover:bg-gray-100 dark:enabled:hover:bg-neutral-800 enabled:focus-visible:bg-gray-100 dark:enabled:focus-visible:bg-neutral-800 text-gray-500 dark:text-neutral-500 icon-button-base;
+  }
+
+  .icon-button-light {
+    @apply enabled:hover:bg-gray-100 dark:enabled:hover:bg-neutral-800 enabled:focus-visible:bg-gray-100 dark:enabled:focus-visible:bg-neutral-800 text-gray-400 text-neutral-500 icon-button-base;
+  }
+
+  .icon-button-dark {
+    @apply enabled:hover:bg-gray-200 dark:enabled:hover:bg-neutral-700 enabled:focus-visible:bg-gray-200 dark:enabled:focus-visible:bg-neutral-700 text-gray-600 dark:text-neutral-500 icon-button-base;
+  }
+
+  .icon-button-icon {
+    @apply w-[18px];
+  }
+
+  .icon-button-icon-lg {
+    @apply w-5;
+  }
+
+  select option {
+    color: unset !important;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 100;
+    }
+  }
+}
+
+.model-fields {
+  height: calc(100vh - 136px);
+}
